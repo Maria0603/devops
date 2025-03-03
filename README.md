@@ -14,19 +14,23 @@ Follow these steps to build and run the Spring Boot application in a Docker cont
    cd /c:/Masha/via/devops/
    ```
 
-3. **Star the Docker containesr:**
+3. **Start the Docker containers:**
 
    ```sh
    docker-compose up --build
    ```
 
-4. **Stop the Docker containers:**
+   Go to localhost to see the frontend
+    ```sh
+   localhost:3000
+   ```
+
+5. **Stop the Docker containers:**
 
    ```sh
    docker-compose stop
    ```
-
-5. **Stop and remove the Docker containers:**
+    **Stop and remove the Docker containers:**
 
    ```sh
    docker-compose down
