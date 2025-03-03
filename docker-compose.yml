@@ -24,5 +24,12 @@ services:
       SPRING_DATASOURCE_USERNAME: viatabloiduser
       SPRING_DATASOURCE_PASSWORD: viatabloidpassword
 
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - app
+
 volumes:
   postgres-data:
