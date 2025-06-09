@@ -1,0 +1,19 @@
+name: Monitor Frontend Health
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  workflow_dispatch:        # Manual trigger if needed
+
+jobs:
+  check-health:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping frontend health endpoint
+        run: |
+          curl -f https://plantandgo-frontend.westeurope.azurecontainer.io/ || exit 1
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "❌ Frontend is down!"
