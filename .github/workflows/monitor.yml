@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Ping frontend health endpoint
         run: |
-          curl -f https://plantandgo-frontend.westeurope.azurecontainer.io/ || exit 1
+          curl -f http://plantandgo-frontend.northeurope.azurecontainer.io/ || exit 1
 
       - name: Notify on failure
         if: failure()
